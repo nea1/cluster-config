@@ -1,29 +1,38 @@
+# cannot access top level scope inside range loop so must assign to global variables
+{{- $chart := .Chart -}}
+{{- $values := .Values -}}
+{{- $release := .Release -}}
+
+# create a deployment for each version of beta
+{{- range .Values.images }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  beta-{{ .Values.image.tag }}  # needs to add loop
-  namespace: {{ .Release.Namespace }}
+  name: beta-{{ .tag }}
+  namespace: {{ $release.Namespace }}
   labels:
     app: beta
-    version: "{{ .Values.image.tag }}"
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    version: "{{ .tag }}"
+    chart: {{ $chart.Name }}-{{ $chart.Version | replace "+" "_" }}
+    release: {{ $release.Name }}
+    heritage: {{ $release.Service }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ $values.replicaCount }}
   selector:
     matchLabels:
       app: beta
-      version: "{{ .Values.image.tag }}"
+      version: "{{ .tag }}"
   template:
     metadata:
       labels:
         app: beta
-        version: "{{ .Values.image.tag }}"
+        version: "{{ .tag }}"
     spec:
       containers:
         - name: beta
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          image: {{ .repository }}:{{ .tag }}
           env:
           - name: GAMMA_URL
             value: http://gamma
+{{- end }}
