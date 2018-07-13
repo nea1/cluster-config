@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  beta-{{ .Values.image.tag }}  # needs to add loop
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: beta
+    version: "{{ .Values.image.tag }}"
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: beta
+      version: "{{ .Values.image.tag }}"
+  template:
+    metadata:
+      labels:
+        app: beta
+        version: "{{ .Values.image.tag }}"
+    spec:
+      containers:
+        - name: beta
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          env:
+          - name: GAMMA_URL
+            value: http://gamma
