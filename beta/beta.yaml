@@ -1,0 +1,10 @@
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
+metadata:
+  name: beta
+  namespace: default
+  labels:
+    chart: beta
+spec:
+  chartGitPath: beta
+  releaseName: beta

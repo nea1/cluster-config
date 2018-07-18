@@ -3,10 +3,7 @@
 1. If wanting to use helm operator: Add github.com to ssh known_hosts for all flux containers (for some reason the flux operator does this itself but the helm operator doesn't so if you want to use it you need to do this)
 
 	```
-	ssh-keyscan github.com >> known_hosts
-	cat known_hosts
-	
-	KNOWN_HOSTS='github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
+	KNOWN_HOSTS=`ssh-keyscan github.com`
 	```
 	
 1. Install flux (configured to use branch `main1-backend-lab-secure` of `cluster-config` repo, with helm charts in `charts` and the `known_hosts` above). Omit the helmOperator and ssh.known_hosts if not using the helm operator.
