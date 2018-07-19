@@ -1,10 +1,10 @@
-apiVersion: helm.integrations.flux.weave.works/v1alpha2
-kind: FluxHelmRelease
-metadata:
-  name: alpha
-  namespace: default
-  labels:
-    chart: alpha
-spec:
-  chartGitPath: alpha
-  releaseName: alpha
+#apiVersion: helm.integrations.flux.weave.works/v1alpha2
+#kind: FluxHelmRelease
+#metadata:
+#  name: alpha
+#  namespace: default
+#  labels:
+#    chart: alpha
+#spec:
+#  chartGitPath: alpha
+#  releaseName: alpha
