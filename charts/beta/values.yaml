@@ -1,4 +1,4 @@
-replicaCount: 1
+replicaCount: 2
 images:
 #- repository: n3a1/beta
 #  tag: "1.0"
