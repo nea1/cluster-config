@@ -5,7 +5,6 @@ metadata:
   namespace: default
   labels:
     chart: beta
-    foo: bar
 spec:
   chartGitPath: beta
   releaseName: beta
