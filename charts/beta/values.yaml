@@ -1,8 +1,8 @@
 replicaCount: 1
 images:
-- repository: n3a1/beta
-  tag: "1.0"
-  weight: 10
+#- repository: n3a1/beta
+#  tag: "1.0"
+#  weight: 10
 - repository: n3a1/beta
   tag: "2.0"
   weight: 90
