@@ -6,6 +6,6 @@ images:
 #- repository: n3a1/beta
 #  tag: "2.0"
 #  weight: 10
-#- repository: n3a1/beta
-#  tag: "3.0"
-#  weight: 10
+- repository: n3a1/beta
+  tag: "3.0"
+  weight: 10
