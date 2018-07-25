@@ -1,5 +1,5 @@
 
-# only need to create this f we have muliple versions that we want to canary...
+# only need to create this if we have muliple versions that we want to canary...
 {{if gt (len .Values.images) 1 }}
 ---
 # need to define a destinationrule to define the different subsets of the service
@@ -7,6 +7,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: beta
+  namespace: {{ .Release.Namespace }}
 spec:
   host: beta.default.svc.cluster.local
   subsets:
@@ -21,6 +22,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: beta
+  namespace: {{ .Release.Namespace }}
 spec:
   hosts:
     - beta.default.svc.cluster.local

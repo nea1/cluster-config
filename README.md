@@ -28,3 +28,11 @@
 	```
 
 1. Add this as a deploy key to github with read/write permissions
+
+# Testing charts locally
+
+```
+helm install charts/beta --name beta
+helm upgrade beta charts/beta --set images.0.weight=99 --set images.1.weight=1 --dry-run --debug
+
+```
