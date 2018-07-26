@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: neal
+  labels:
+    istio-injection: enabled
+    foo: bar
+
