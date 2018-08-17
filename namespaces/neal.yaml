@@ -5,6 +5,5 @@ metadata:
   labels:
     istio-injection: enabled
     foo: bar
-    baz: bing
 
 
