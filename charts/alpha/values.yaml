@@ -1,6 +1,0 @@
-replicaCount: 1
-image:
-  repository: n3a1/alpha
-  tag: "1.2"
-
-

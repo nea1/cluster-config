@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hplat
+  labels:
+    istio-injection: enabled
+    foo: bar
+
