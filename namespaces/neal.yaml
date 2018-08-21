@@ -4,6 +4,6 @@ metadata:
   name: neal
   labels:
     istio-injection: enabled
-    foo: bar
+    foo: bar2
 
 
