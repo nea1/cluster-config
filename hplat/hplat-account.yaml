@@ -5,6 +5,7 @@ metadata:
   namespace: hplat
   labels:
     foo: bar
+    baz: bing
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
