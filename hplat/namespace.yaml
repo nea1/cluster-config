@@ -3,6 +3,6 @@ kind: Namespace
 metadata:
   name: hplat
   labels:
-    istio-injection: enabled
+    istio-injection: disabled
     foo: bar
 
