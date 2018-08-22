@@ -23,3 +23,6 @@ helm install --name flux \
 --set-string ssh.known_hosts="${KNOWN_HOSTS}" \
 --namespace flux \
 weaveworks/flux
+
+
+kubectl -n flux logs deployment/flux | grep identity.pub | cut -d '"' -f2
