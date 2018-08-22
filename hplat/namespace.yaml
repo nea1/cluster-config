@@ -4,5 +4,5 @@ metadata:
   name: hplat
   labels:
     istio-injection: enabled
-    foo: ba
+    foo: bar
 
